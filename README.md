@@ -1,7 +1,7 @@
 # Relatório sobre EDO
 
-    Disciplina de Métodos Numéricos Aplicados. Programa de pós-graduação em Modelagem Computacional
-    na Universidade Federal do Rio Grande/ RS (FURG). =)
+    Relatório desenvolvido para a disciplina de Métodos Numéricos Aplicados. Programa de pós-graduação em 
+    Modelagem Computacional na Universidade Federal do Rio Grande/ RS (FURG). =)
     
 ---
 
