@@ -1,13 +1,14 @@
 # Relatório sobre EDO
 
-    Métodos Numéricos Aplicados.  =)
+    Disciplina de Métodos Numéricos Aplicados. Programa de pós graduação em Modelagem Computacional
+    na Universidade Federal do Rio Grande/ RS (FURG).
     
 ---
 
 ## Autores:
 
 * André Lopes Brum (andre_brum2003@yahoo.com.br)
-* Pedro Henrique Fernandes Lobo (pedrohflobo@gmail.com)
+* Pedro Henrique Fernandes Lobo (pedrohflobo@gmail.com) (https://github.com/WX-78)
 * Vinícius Heidtmann Avila (vinicius.heidtmann@gmail.com)
 
 ---
