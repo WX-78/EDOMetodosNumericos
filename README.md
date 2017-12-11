@@ -1,6 +1,6 @@
 # Relatório sobre EDO
 
-Métodos Numéricos Aplicados
+    Métodos Numéricos Aplicados
 ===
 
 ## Autores:
