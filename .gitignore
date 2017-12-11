@@ -1,11 +1,11 @@
-latex/*.pdf
-latex/*.aux
-latex/*.eps
-latex/*.bbl
-latex/*.blg
-latex/*.log
-latex/graficoA.tex
-latex/graficoB.tex
+relatorio/*.pdf
+relatorio/*.aux
+relatorio/*.eps
+relatorio/*.bbl
+relatorio/*.blg
+relatorio/*.log
+relatorio/graficoA.tex
+relatorio/graficoB.tex
 
 programas/*.out
 programas/*.dat
