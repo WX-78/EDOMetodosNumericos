@@ -1,0 +1,415 @@
+\documentclass[
+		12pt,            %tamanho padrão da fonte
+		a4paper
+	      ]  
+	      {article}          %tipo de documento
+	      
+%----------pacotes----------
+\usepackage[brazilian=nohyphenation]{hyphsubst} % elimina a criação de hifens entre linhas
+\usepackage{amsmath}			% equações
+\usepackage{graphicx}			% imagens
+\usepackage[brazilian]{babel}		% tradução para PT BR
+\usepackage[utf8]{inputenc}		% acentos
+\usepackage{indentfirst}		% insere o primeiro parágrafo
+\usepackage{setspace}			% permite escolher espaço entre linhas	
+
+%----conf. da aparencia-----
+	\frenchspacing						% better looking spacing
+	%\renewcommand{\rmdefault}{phv} % Arial
+	%\renewcommand{\sfdefault}{phv} 
+	\renewcommand{\baselinestretch}{1.5} % espaço entre linhas
+	\usepackage{titlesec}
+		\titleformat*{\section}{\large\bfseries}
+
+\usepackage{microtype}  		% para melhorias de justificação
+\usepackage{setspace}			% permite escolher espaço entre linhas	
+	% O tamanho do parágrafo é dado por:
+	\setlength{\parindent}{13mm}
+
+	% Controle do espaçamento entre um parágrafo e outro:
+	\setlength{\parskip}{5mm}  % tente também \onelineskip
+
+\usepackage[a4paper, left=30mm,right=20mm,top=30mm,bottom=20mm,%
+            footskip=.30mm]{geometry}
+
+\usepackage{caption}
+\captionsetup[figure]{labelformat=simple}%
+\renewcommand{\thefigure}{\arabic{figure}}
+\usepackage[font=small,labelfont=bf]{caption}
+
+
+\usepackage{graphicx}    %graficos
+
+\usepackage{xcolor} % for setting colors
+\usepackage{listings} % codigo fonte
+\usepackage{authblk}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codeblue}{rgb}{0,0,139}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+        commentstyle=\color{codegreen},
+	keywordstyle=\color{codeblue},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+%----cabeçalho e rodapé-----
+\usepackage{fancyhdr}
+               
+	\pagestyle{fancy}
+	\rhead{}
+	\chead{}
+	\lhead{\small Universidade Federal do Rio Grande \hfill \thepage}
+	\lfoot{}
+	\cfoot{}
+	\rfoot{}
+	\renewcommand{\headrulewidth}{0.05pt}
+	\renewcommand{\footrulewidth}{0.0pt}
+	\thispagestyle{empty}
+
+	\title{Métodos numéricos aplicados a equações diferenciais ordinárias}
+	\newcommand{\authorA}{André Lopes Brum}
+	\newcommand{\authorB}{Pedro Henrique Fernandes Lobo}
+	\newcommand{\authorC}{Vinícius Heidtmann Avila}
+
+	\usepackage[hang, perpage]{footmisc}
+	\usepackage{lipsum}
+
+	\addtolength{\footskip}{0.5cm}
+	\setlength{\footnotemargin}{0.3cm}
+	\setlength{\footnotesep}{0.4cm} 
+	\setlength{\skip\footins}{3mm}
+
+
+\begin{document}
+
+	%-----------capa------------
+	\begin{titlepage}
+	\makeatletter
+
+	\noindent% just to prevent indentation narrowing the line width for this line
+		\includegraphics[height=25.0mm]{logoFurg.png}
+		\begin{minipage}[b]{0.7\textwidth}
+			\centering
+			{\Large Universidade Federal do Rio Grande} \\
+			\vspace{1.5mm}
+			{Instituto de Matemática, Estatística e Física} \\
+			\vspace{0.5mm}
+			{\sc Pós-Graduação em Modelagem Computacional} \\
+			\vspace{0.2mm}
+			\centering\rule{0.95\textwidth}{1pt}
+		\end{minipage}
+		\includegraphics[height=30.0mm, clip, trim = 10mm  0 0 0]{logoIMEF.jpg}
+		\begin{center}	
+			{\bf\small \MakeUppercase{\authorA}}\\		 
+			{\bf\small \MakeUppercase{\authorB}}\\		 
+			{\bf\small \MakeUppercase{\authorC}}\\
+		\end{center}
+			\vspace{5cm}
+		\begin{center}
+			{\bf\large \MakeUppercase{\@title}} \\
+		\end{center}
+		\vfill		
+		\begin{center}
+			\vspace{15mm}
+			Rio Grande-RS, \the\year 
+		\end{center}
+
+	\makeatother
+	\end{titlepage}
+
+
+	%------folha de rosto-------	
+
+		\begin{titlepage}	
+	
+	\makeatletter
+
+	\noindent% just to prevent indentation narrowing the line width for this line
+		\includegraphics[height=25.0mm]{logoFurg.png}
+		\begin{minipage}[b]{0.7\textwidth}
+			\centering
+			{\Large Universidade Federal do Rio Grande} \\
+			\vspace{1.5mm}
+			{Instituto de Matemática, Estatística e Física} \\
+			\vspace{0.5mm}
+			{\sc Pós-Graduação em Modelagem Computacional} \\
+			\vspace{0.2mm}
+			\centering\rule{0.95\textwidth}{1pt}
+		\end{minipage}
+		\includegraphics[height=30.0mm, clip, trim = 10mm  0 0 0]{logoIMEF.jpg}
+		\begin{center}	
+			{\bf\small \MakeUppercase{\authorA}}\\		 
+			{\bf\small \MakeUppercase{\authorB}}\\		 
+			{\bf\small \MakeUppercase{\authorC}}\\
+		\end{center}
+			\vspace{5cm}
+		\begin{center}
+			{\bf\large \MakeUppercase{\@title}} \\
+		\end{center}
+	
+			\vspace{10mm}
+			
+			\begin{flushright}
+			\begin{minipage}[t]{0.5\textwidth}
+				\setlength{\parindent}{0mm}
+				Trabalho apresentado ao programa de Pós-Graduação em Modelagem 
+				Computacional, pertencente a Universidade Federal do Rio Grande, 
+				como requisito de avaliação parcial para conclusão do curso de 
+				Métodos Numéricos Aplicados.
+			\end{minipage}	
+			\end{flushright}
+
+			\vspace{15mm}
+			\vfill	
+			\begin{center}
+				Rio Grande-RS, \the\year 
+			\end{center}
+			\makeatother
+	
+		\end{titlepage}
+		\cleardoublepage
+
+	
+		\section{Objetivo}
+	
+	Comparar os métodos de Euler e Runge-Kutta de dois estágios
+	ao resolver uma equação diferencial ordinária de segunda ordem.
+
+
+
+
+	\section{Introdução}
+
+	Muitos problemas em ciências e engenharias são modelados através de equações 
+	diferenciais. Porém, nem sempre elas apresentam soluções analíticas. Por isto, 
+	muitas vezes é necessário recorrer ao computador para que encontrar as soluções 
+	numéricas.\par
+
+	Desta maneira, para compreender a lógica por trás dos métodos Runge Kutta e de Euler, 
+	que são bastante conhecidos, iremos aplicá-los em um problema simples e recorrente 
+	na física, fazendo uma breve discusão sobre eficácia a deles.
+
+	\section{Fundamentação teórica}
+
+	Seja uma equação diferencial da forma:
+	
+	\vspace{-5mm}
+	\begin{equation}\label{eq:diff}
+		\begin{aligned}
+			\frac{d}{dt} y(t)&=f\left ( t,y(t) \right ) \\
+			y(0) &= y_0
+		\end{aligned}
+	\end{equation}
+	\vspace{-5mm}
+	
+	Embora esta equação possa ter uma solução analítica, ou seja, capaz de estabelecer 
+	diferenciais contínuas em um intervalo, o computador pode imitar o processo de 
+	diferenciação se o espaço for discretizado. Para isto, vamos procurar uma solução através 
+	de uma expansão em série de Taylor:
+	
+	\vspace{-13mm}
+	\begin{equation*}
+		y(t+\Delta t) = y(t) + \Delta t \dfrac{d}{dt}y(t)
+		+  \frac{\Delta t }{2!}\dfrac{d^2}{dt^2}y(t) + 
+		\frac{ \Delta t }{3!}  \dfrac{d^3}{dt^3}y(t) +...+
+		\frac{ \Delta t }{n!}  \dfrac{d^n}{dt^n}y(t) 
+	\end{equation*}
+	\vspace{-13mm}
+
+	Se truncarmos a série no primeiro termo e isolarmos a diferencial obtemos:
+	
+	\vspace{-5mm}
+	\begin{equation}\label{eq:diffA}
+		\frac{d}{dt}y(t) = \frac{y(t + \Delta t)- y(t)}{\Delta t} + \mathcal{O}(\Delta t)
+	\end{equation}
+	\vspace{-7mm}
+	
+	Com isso, comparando as equações \ref{eq:diff} e \ref{eq:diffA} e negligenciando 
+	os demais termos a partir do segundo, podemos determinar de uma forma iterativa, qual o valor da função 
+	$f\left ( t,y(t) \right )$ no ponto seguinte distante de $\Delta t$. Desta forma, a expressão 
+	seguinte é conhecida como método de Euler e o cálculo da função avaliada na posição subsequente 
+	é dada por:
+	
+	\vspace{-5mm}
+	\begin{equation}
+		y(t + \Delta t) \approx y(t) + \Delta t f \left ( t, y \left ( t \right ) \right )
+	\end{equation}
+	\vspace{-7mm}
+	
+	Agora iremos reescrever a equação anterior, substituindo $y_n$ por $y(t)$; $t$ por $t_n$ e 
+	$\Delta t$ por $h$. Logo, o método de Euler é expresso na forma a seguir para obtermos uma 
+	aproximação discretizada da solução $y_{n+1}$ avaliada em cada ponto $n + 1$.
+
+	\vspace{-5mm}
+	\begin{equation}\label{eq:euler}
+		y_{n+1} = y_n + h f \left ( t_n, y_n \right ) 
+	\end{equation}
+	\vspace{-7mm}
+
+	Obviamente para utilizarmos o método é necessário fornecer uma condição inicial para o cálculo 
+	do primeiro ponto. Além disso, há um erro associado ao truncamento realizado que vai aumentando
+	a cada iteração. Portanto, para melhorar a aproximação, devemos adotar outro procedimento. Isto 
+	pode ser realizado através de uma quadratura numérica (ver \cite{NASA1967, Chapman2010C6}) que 
+	resulta na família de métodos Runge Kutta.\par
+	
+	Para isto, há varias maneiras de estabelecer a função que resolve numericamente a EDO e que podem 
+	ser verificados em \cite{NASA1967,Chapman2010C7, Hairer1989}. Mas este assunto vai muito além da 
+	escopo deste trabalho e por isso vamos simplesmente apresentar a equação com parâmetros arbitrados 
+	que o faz ser conhecido como método {\it midpoint} Runge-Kutta de dois estágios.
+
+
+	\vspace{-5mm}
+	\begin{equation}\label{eq:rk2}
+		\begin{aligned}
+			k_1 &= hf(t_i,y_i)\\
+			k_2 &= hf\left (t_i+\frac{h}{2}, y_i + \frac{h}{2} k_1 \right )\\
+			y_{i+1} &= y_i + hk_2
+		\end{aligned}
+	\end{equation}
+	\vspace{-5mm}
+
+	\section{Aplicação}
+	
+	Muitos problemas físicos apresentam comportamento oscilatório como sistemas massa-mola, pêndulo simples,
+	pêndulo de torção, circuito LC, oscilador harmônico quântico, etc. Em todos estes casos, quando não há  
+	termos responsáveis pela restauração e dissipação de energia, o sistema entra no regime de movimento 
+	harmônico simples\footnote{Em alguns casos, como o do pêndulo simples, a equação diferencial costuma passar
+	por um processo de linearização para que possa ser considerado movimento harmônico simples.}, ou seja, 
+	passa a oscilar eternamente. Matematicamente as equações que governam este tipo de fenômeno tem a forma 
+	apresentada a seguir:
+
+	\vspace{-5mm}
+	\begin{equation}\label{eq:geral}
+		\frac{d^2 }{dt^2} \psi(t) = - \omega^2 \psi(t)
+	\end{equation}
+
+	Onde o termo $\omega$ é definido como a frequência natural do sistema, $t$ é variável independente
+	e $\psi(t)$ é o termo dependente. Note também que é conveniente aplicar uma redução de ordem sobre a 
+	diferencial para utilização dos métodos numéricos. Isto porque eles foram elaborados para serem utilizados 
+	em sistemas de equações diferenciais de primeira ordem. Sendo assim, reescrevendo a expressão anterior, 
+	obtemos:
+
+	\vspace{-5mm}
+	\begin{equation}\label{eq:reduzida}
+		\begin{aligned}			
+			\frac{dz}{dt} &= - \omega^2 \psi \\
+			\frac{d\psi}{dt} &= z
+		\end{aligned}
+	\end{equation}
+	
+	As equações \ref{eq:geral} e \ref{eq:reduzida} apresentam a solução dada por \ref{eq:solucao}, onde 
+	$A$ é a amplitude de oscilação e $\phi$ é o ângulo de fase. Ambos os termos são arbitrados como
+	condições iniciais do problema.
+
+	\vspace{-10mm}
+	\begin{equation}\label{eq:solucao}
+		\psi(t)=A\cos(\omega t + \phi)
+	\end{equation}
+	\vspace{-15mm}
+
+	\section{Simulações}
+
+	Em geral, métodos numéricos são normalmente utilizados quando é dificil encontrar soluções analíticas 
+	de EDOs. Entretanto, no nosso caso esta é conhecida, então é  conveniente fazer uma comparação entre ela 
+	e os métodos Runge-Kutta e de Euler. Para isto, vamos estabelecer as condições de contorno do problema. 
+	Desta maneira, derivando a equação \ref{eq:solucao} em relação a $t$, obtemos $z(t)$ apresentada a seguir:
+	
+	\vspace{-5mm}
+	\begin{equation}\label{eq:derivada}
+		\frac{d}{dt}\psi(t)= z(t) = -A \omega \sin(\omega t + \phi)
+	\end{equation}
+
+	Como $A$ e $\omega$ são positivos, ao inspecionar as equações \ref{eq:solucao} e \ref{eq:derivada} 
+	e arbitrar $\psi(0) = 1$ e $z(0) = 0$, implica em $\phi = 0$ e $A = 1$. Além disso, adotamos a constante 
+	$\omega = 1.4$. E com isso, passamos a determinar todos os termos presentes na solução dada pela equação 
+	\ref{eq:solucao}.\par
+	
+	Para resolver numericamente a EDO, construímos dois programas em {\it Fortran90}, capazes de resolvê-la 
+	pelo método de Euler e Runge-Kutta de dois estágios ao aplicar as relações \ref{eq:euler} e \ref{eq:rk2} 
+	respectivamente. Cada programa utiliza o primeiro ponto obtido pelas condições de contorno e a partir dele, 
+	a cada iteração, estabelece o valor do ponto seguinte. Obviamente foi necessário reduzir a ordem da derivada 
+	(ver a relação \ref{eq:reduzida}) e executar o algorítimo simultaneamente nas duas diferenciais. O leitor 
+	pode ver com detalhes o seu funcionamento através dos códigos fontes apresentados em anexo.
+	
+	\section{Resultados e discussões}
+	
+	Ao compilar\footnote{O compilador utilizado é o {\it gfortran} 5.4.0} e executar os programas, o 
+	terminal\footnote{{\it Linux Lite} 3.6} mostra três colunas que representam $t$, $\psi(t)$ e $z(t)$ 
+	respectivamente. Ao plotarmos um gráfico de $\psi(t)$ em função de $t$ contendo a curva teórica dada 
+	pela equação \ref{eq:solucao} e os dois métodos numéricos, obtemos as figuras \ref{fig:A} e \ref{fig:B} que 
+	diferem apenas pelo tamanho do passo $h$.
+
+	Na figuras \ref{fig:A} e \ref{fig:B}, ao compararmos as soluções numéricas com a curva teórica, verificamos 
+	que parecem haver defasagens e um aumento progressivo nas amplitudes. Mas, na verdade, isto ocorre porque a 
+	cada iteração os métodos vão acumulando erros que aumentam com o tamanho do passo $h$. Ao diminuirmos este,
+	o resultado numérico passa a se aproximar mais da solução analítica. 
+
+	\begin{figure}[h!]
+		\centering
+		\captionsetup{width=0.75\textwidth}
+		\resizebox{0.65\textwidth}{!}{\input{graficoA}}
+		\caption{Solução numérica através dos métodos de Euler e Runge-Kutta de dois estágios seguido da
+			 analítica dada pela equação \ref{eq:solucao}. Onde $A = 1$, $\phi = 0$ e $\omega = 1.4$.
+			 O tamanho do passo arbitrado é $h = 0.12$.}
+		\label{fig:A}
+	\end{figure}
+
+	Fazendo uma comparação entre os métodos numéricos, verificamos que o de Euler se afasta da solução analítica 
+	com muito mais rapidez quando comparado com o Runge-Kutta. Isto ocorre porque a forma com que estes 
+	algorítimos são construídos levam em conta uma aproximação por quadratura numérica, fazendo com que o método 
+	de Euler se torne um caso particular (e de menor acurácia) da familia de métodos Runge-Kutta de qualquer 
+	estágio superior (ver \cite{NASA1967, Chapman2010C6, Chapman2010C7}).
+	
+	\begin{figure}[h!]\label{fig:hPequeno}
+		\centering
+		\captionsetup{width=0.75\textwidth}
+		\resizebox{0.65\textwidth}{!}{\input{graficoB}}
+		\caption{Solução numérica através dos métodos de Euler e Runge-Kutta de dois estágios seguido da
+			 analítica dada pela equação \ref{eq:solucao}. Onde $A = 1$, $\phi = 0$ e $\omega = 1.4$.
+			 O tamanho do passo arbitrado é $h = 0.05$.}
+		\label{fig:B}
+	\end{figure}
+	Diante do exposto, ao realizarmos as comparações, consideramos que o método Runge-Kutta de dois estágios é 
+	mais eficaz, pois apresenta uma melhor aproximação da solução analítica. Entretanto, este possui uma equação 
+	adicional para ser resolvida a cada iteração e certamente ele exige um maior esforço computacional.
+	
+	\cleardoublepage
+	\renewcommand{\baselinestretch}{1.5} % espaço entre linhas
+	\nocite{*}
+	\bibliographystyle{abntex2-num}
+	\bibliography{referencia.bib} 
+
+	\cleardoublepage
+	\section*{Anexo A}
+	\renewcommand{\lstlistingname}{Listagem}
+
+	\renewcommand{\baselinestretch}{1.0} % espaço entre linhas
+	\lstinputlisting[language=Fortran, caption={Código fonte em {\it Fortran90} para o método Runge-Kutta 
+			de dois estágios.}]{../programas/rk2.f90}
+
+	\cleardoublepage
+	\section*{Anexo B}
+	\lstinputlisting[language=Fortran, caption={Código fonte {\it Fortran90} para o método de Euler.}]
+		        {../programas/euler.f90}
+	
+	\cleardoublepage
+	\end{document}

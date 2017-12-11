@@ -1,0 +1,11 @@
+latex/*.pdf
+latex/*.aux
+latex/*.eps
+latex/*.bbl
+latex/*.blg
+latex/*.log
+latex/graficoA.tex
+latex/graficoB.tex
+
+programas/*.out
+programas/*.dat
