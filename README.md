@@ -27,7 +27,7 @@ de Runge-Kutta de dois estágios e do método de Euler.
 
 
 Para executar, abra o terminal (Linux obviamente) e utilize o comando "make" para compilar e "make run" 
-para executar os projetos. Se realizado na pasta latex, vai produzir o arquivo "relatório.pdf". Já na pasta 
+para executar os projetos. Se realizado na pasta relatorio, vai produzir o arquivo "relatório.pdf". Já na pasta 
 programas, vai produzir a soluções das EDO's pelos dois métodos, apresentados em forma de arquivos de texto (.dat).
 
 
