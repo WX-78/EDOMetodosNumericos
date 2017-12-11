@@ -1,21 +1,21 @@
-#Relatório sobre EDO
+# Relatório sobre EDO
 
 Métodos Numéricos Aplicados
 ===
 
-##Autores:
+## Autores:
 
 * André Lopes Brum (andre_brum2003@yahoo.com.br)
 * Pedro Henrique Fernandes Lobo (pedrohflobo@gmail.com)
 * Vinícius Heidtmann Avila (vinicius.heidtmann@gmail.com)
 
 ---
-##Professor:
+## Professor:
 	
-	Dr. Wiliam Correa Marques (wilian_marques@yahoo.com.br)
+* Dr. Wiliam Correa Marques (wilian_marques@yahoo.com.br)
 
 ---
-##Projeto:
+## Projeto:
 
 Arquivos relacionados ao Relatório apresentado como trabalho na disciplina de Métodos Numéricos.
 
@@ -32,13 +32,13 @@ EDO's pelos dois métodos.
 OBS. É necessário ter o gnuplot instalado para gerar os gráficos.
 
 ---
-##Compiladores utilizados:
+## Compiladores utilizados:
 
 * GNU Fortran (Ubuntu 5.4.0-6ubuntu1~16.04.5) 5.4.0 
 * pdfTeX 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian)
 
 ---
-##Versão do Gnuplot:
+## Versão do Gnuplot:
 
 * gnuplot 5.0 
 
