@@ -1,7 +1,7 @@
 # Relatório sobre EDO
 
-    Relatório desenvolvido para a disciplina de Métodos Numéricos Aplicados. Programa de pós-graduação em 
-    Modelagem Computacional na Universidade Federal do Rio Grande/ RS (FURG). =)
+    Disciplina de Métodos Numéricos Aplicados. Programa de pós graduação em Modelagem Computacional
+    na Universidade Federal do Rio Grande/ RS (FURG). =)
     
 ---
 
@@ -19,7 +19,7 @@
 ---
 ## Projeto:
 
-Arquivos relacionados ao Relatório apresentado como avaliação na disciplina de Métodos Numéricos.
+Arquivos relacionados ao Relatório apresentado como trabalho na disciplina de Métodos Numéricos.
 
 
 No projeto foram criados dois programas em fortran90 que resolvem uma EDO específica através dos métodos
@@ -27,11 +27,11 @@ de Runge-Kutta de dois estágios e do método de Euler.
 
 
 Para executar, abra o terminal (Linux obviamente) e utilize o comando "make" para compilar e "make run" 
-para executar os projetos. Se realizado na pasta "relatorio", vai produzir o arquivo "relatório.pdf". Já na pasta 
+para executar os projetos. Se realizado na pasta latex, vai produzir o arquivo "relatório.pdf". Já na pasta 
 programas, vai produzir a soluções das EDO's pelos dois métodos, apresentados em forma de arquivos de texto (.dat).
 
 
-OBS. É necessário ter o gnuplot instalado para gerar os gráficos e pdflatex para gerar o arquivo do relatório.
+OBS. É necessário ter o gnuplot instalado para gerar os gráficos.
 
 ---
 ## Compiladores utilizados:
