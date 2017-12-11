@@ -1,6 +1,6 @@
 # Relatório sobre EDO
 
-    Métodos Numéricos Aplicados
+    Métodos Numéricos Aplicados  =)
     
 ---
 
@@ -25,9 +25,9 @@ No projeto foram criados dois programas em fortran90 que resolvem uma EDO espec�
 de Runge-Kutta de dois estágios e do método de Euler.
 
 
-Para executar, utilize o comando "make" para compilar e "make run" para executar os projetos. Se realizado
-na pasta latex, vai produzir o arquivo "relatório.tex". Já na pasta programas, vai produzir a soluções das
-EDO's pelos dois métodos.
+Para executar, abra o terminal (Linux obviamente) e utilize o comando "make" para compilar e "make run" 
+para executar os projetos. Se realizado na pasta latex, vai produzir o arquivo "relatório.tex". Já na pasta 
+programas, vai produzir a soluções das EDO's pelos dois métodos.
 
 
 OBS. É necessário ter o gnuplot instalado para gerar os gráficos.
