@@ -1,7 +1,8 @@
 # Relatório sobre EDO
 
     Métodos Numéricos Aplicados
-===
+    
+---
 
 ## Autores:
 
