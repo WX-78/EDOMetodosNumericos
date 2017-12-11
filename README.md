@@ -19,7 +19,7 @@
 ---
 ## Projeto:
 
-Arquivos relacionados ao Relatório apresentado como trabalho na disciplina de Métodos Numéricos.
+Arquivos relacionados ao Relatório apresentado como avaliação na disciplina de Métodos Numéricos.
 
 
 No projeto foram criados dois programas em fortran90 que resolvem uma EDO específica através dos métodos
