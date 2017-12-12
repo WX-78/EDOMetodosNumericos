@@ -37,9 +37,9 @@ module runge_kutta_2
 		allocate ( k1(Neqs), k2(Neqs))
 		y(:,1)=y0 ! valores iniciais
 		do i=1, Npassos-1
-			k2 = f(t(i),y(:,i))
-			k1 = f( t(i)+h/2.0, y(:,i) + (h/2.0)*k1 )
-			y(:,i+1) = y(:,i) + h*k1
+			k1 = f(t(i),y(:,i))
+			k2 = f( t(i)+h/2.0, y(:,i) + (h/2.0)*k1 )
+			y(:,i+1) = y(:,i) + h*k2
 		end do
 	end subroutine rk2
 end module runge_kutta_2
